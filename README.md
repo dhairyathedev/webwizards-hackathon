@@ -287,22 +287,6 @@ AWS_SECRET_ACCESS_KEY=your_aws_secret_key
 AWS_REGION=your_aws_region
 ```
 
-### **Database Setup**
-
-```sql
--- Run these scripts in your Supabase SQL editor
--- 1. Schema setup
-\i sql/schema.sql
-
--- 2. Functions and procedures
-\i sql/functions.sql
-
--- 3. Row Level Security policies
-\i sql/rls_policies.sql
-
--- 4. Seed data (optional)
-\i sql/seed.sql
-```
 
 ---
 
