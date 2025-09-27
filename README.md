@@ -94,7 +94,7 @@ Traditional polling systems suffer from:
 <td>
   <img src="https://img.shields.io/badge/Supabase-green?style=flat&logo=supabase" alt="Supabase" />
   <img src="https://img.shields.io/badge/PostgreSQL-blue?style=flat&logo=postgresql" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Row_Level_Security-red?style=flat" alt="RLS" />
+  <img src="https://img.shields.io/badge/AWS_SES-orange?style=flat&logo=amazon-aws" alt="AWS SES" />
 </td>
 </tr>
 <tr>
@@ -115,7 +115,7 @@ Traditional polling systems suffer from:
 <td><strong>Deployment</strong></td>
 <td>
   <img src="https://img.shields.io/badge/AWS_EC2-orange?style=flat&logo=amazon-aws" alt="AWS EC2" />
-  <img src="https://img.shields.io/badge/AWS_SES-orange?style=flat&logo=amazon-aws" alt="AWS SES" />
+  <img src="https://img.shields.io/badge/PM2-2B037A?style=flat" alt="PM2" />
 </td>
 </tr>
 </table>
@@ -385,7 +385,7 @@ npm install -g pm2
 pm2 start npm --name "pollwizard" -- start
 ```
 
-### **Docker**
+### **Docker (Future Support)**
 
 ```bash
 # Build Docker image
@@ -447,7 +447,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **AWS** for reliable cloud infrastructure and services
 - **The open-source community** for amazing tools, libraries, and inspiration
 - **Next.js team** for the excellent React framework
-
+- CHARUSAT (DEPSTAR) Faculty and Staff for their support and guidance
 ---
 
 
