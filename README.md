@@ -256,7 +256,7 @@ Live updating charts and statistics showing:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/pollwizard.git
+git clone https://github.com/dhairyathedev/pollwizard.git
 cd webwizards-hackathon
 
 # Install dependencies
@@ -441,7 +441,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ and lots of ☕ by Team WebWizards**
 
-[🌟 Star this project](https://github.com/your-username/pollwizard) • [🐛 Report Bug](https://github.com/your-username/pollwizard/issues) • [✨ Request Feature](https://github.com/your-username/pollwizard/issues)
+[🌟 Star this project](https://github.com/dhairyathedev/pollwizard) • [🐛 Report Bug](https://github.com/dhairyathedev/pollwizard/issues) • [✨ Request Feature](https://github.com/dhairyathedev/pollwizard/issues)
 
 ---
 
