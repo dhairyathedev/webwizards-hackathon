@@ -62,7 +62,7 @@ Traditional polling systems suffer from:
 - **Dark/light mode** support
 
 ### 🏗️ **Enterprise-Grade Architecture**
-- **Scalable serverless** deployment on Vercel
+- **Scalable cloud** deployment on AWS EC2
 - **Type-safe** end-to-end with TypeScript
 - **Modern React patterns** with hooks and context
 - **Database optimization** with indexed queries
@@ -114,8 +114,8 @@ Traditional polling systems suffer from:
 <tr>
 <td><strong>Deployment</strong></td>
 <td>
-  <img src="https://img.shields.io/badge/Vercel-black?style=flat&logo=vercel" alt="Vercel" />
-  <img src="https://img.shields.io/badge/Serverless-yellow?style=flat" alt="Serverless" />
+  <img src="https://img.shields.io/badge/AWS_EC2-orange?style=flat&logo=amazon-aws" alt="AWS EC2" />
+  <img src="https://img.shields.io/badge/AWS_SES-orange?style=flat&logo=amazon-aws" alt="AWS SES" />
 </td>
 </tr>
 </table>
@@ -220,28 +220,28 @@ Live updating charts and statistics showing:
 ## 🎯 **What Makes This Hackathon-Worthy**
 
 ### **🏆 Technical Innovation**
-- **Custom fraud detection** algorithm with behavioral analysis
-- **Cryptographic integrity** system for vote validation
-- **Performance optimization** with sub-second response times
-- **Real-time architecture** with optimistic UI updates
+- **Fraud detection system** with behavioral analysis
+- **Vote integrity validation** for secure voting
+- **Performance optimization** with intelligent caching
+- **Real-time architecture** with live updates
 
-### **🎨 User Experience Excellence**
-- **Pixel-perfect design** with smooth animations
-- **Accessibility-first** approach (WCAG 2.1 compliant)
-- **Mobile-optimized** responsive design
-- **Intuitive navigation** with role-based interfaces
+### **🎨 User Experience**
+- **Modern design** with smooth animations
+- **Responsive layout** for all devices
+- **Intuitive interface** with role-based dashboards
+- **Accessible design** following best practices
 
-### **⚡ Performance & Scalability**
-- **99.9% uptime** with serverless architecture
-- **Sub-100ms** response times with optimized caching
-- **Horizontal scaling** ready for millions of votes
-- **Global CDN** distribution with Vercel
+### **⚡ Performance & Architecture**
+- **Optimized React patterns** with hooks and context
+- **Smart caching strategies** for better performance
+- **Scalable database design** with proper indexing
+- **Cloud-ready deployment** for AWS EC2
 
-### **🔒 Security & Integrity**
-- **Multi-layer security** with RLS policies
-- **Fraud prevention** with real-time monitoring
-- **Data encryption** at rest and in transit
-- **Audit trails** for complete transparency
+### **🔒 Security Features**
+- **Row Level Security** policies with Supabase
+- **Real-time monitoring** for suspicious activity
+- **Secure authentication** with proper session handling
+- **Data validation** at multiple layers
 
 ---
 
@@ -280,6 +280,11 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# AWS SES Configuration (for email functionality)
+AWS_ACCESS_KEY_ID=your_aws_access_key
+AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+AWS_REGION=your_aws_region
 ```
 
 ### **Database Setup**
@@ -319,35 +324,30 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 ---
 
-## 📊 **Performance Metrics**
+## 📊 **Performance Features**
 
-| Metric | PollWizard | Industry Standard | Improvement |
-|--------|------------|-------------------|-------------|
-| **Page Load Time** | < 1.2s | < 3s | 2.5x faster |
-| **Vote Processing** | < 200ms | < 1s | 5x faster |
-| **Real-time Updates** | < 50ms | < 500ms | 10x faster |
-| **Fraud Detection** | 99.7% accuracy | 95% | +4.7% |
-| **Uptime** | 99.9% | 99.5% | +0.4% |
+| Feature | Implementation | Benefit |
+|---------|----------------|---------|
+| **Real-time Updates** | WebSocket subscriptions | Live vote tracking |
+| **Fraud Detection** | Behavioral analysis | Enhanced security |
+| **Optimized Caching** | Smart invalidation | Improved performance |
+| **Type Safety** | End-to-end TypeScript | Reduced bugs |
+| **Responsive Design** | Mobile-first approach | Better UX |
 
 ---
 
-## 🔧 **API Endpoints**
+## 🔧 **Architecture**
 
-### **Authentication**
-- `POST /api/auth/login` - User login
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/logout` - User logout
+### **Data Layer**
+- **Supabase** handles authentication, database operations, and real-time subscriptions
+- **PostgreSQL** with Row Level Security (RLS) policies
+- **Real-time subscriptions** for live updates
+- **Database functions** for complex operations like voting and analytics
 
-### **Polls**
-- `GET /api/polls` - Fetch all polls
-- `POST /api/polls` - Create new poll (admin only)
-- `PUT /api/polls/:id` - Update poll (admin only)
-- `DELETE /api/polls/:id` - Delete poll (admin only)
+### **Available Endpoints**
+- `GET /api/test-auth` - Debug authentication status (development only)
 
-### **Voting**
-- `POST /api/votes` - Cast a vote
-- `GET /api/polls/:id/results` - Get poll results
-- `GET /api/polls/:id/analytics` - Get detailed analytics
+*Note: Most functionality uses Supabase client-side SDK and database functions rather than traditional REST APIs*
 
 ---
 
@@ -371,18 +371,18 @@ npm run test:coverage
 
 ## 🚀 **Deployment**
 
-### **Vercel (Recommended)**
+### **AWS EC2 (Recommended)**
 
 ```bash
-# Install Vercel CLI
-npm i -g vercel
+# Build the application
+npm run build
 
-# Deploy to Vercel
-vercel
+# Start production server
+npm run start
 
-# Set environment variables in Vercel dashboard
-# Deploy with custom domain
-vercel --prod
+# Or use PM2 for process management
+npm install -g pm2
+pm2 start npm --name "pollwizard" -- start
 ```
 
 ### **Docker**
@@ -394,6 +394,11 @@ docker build -t pollwizard .
 # Run container
 docker run -p 3000:3000 pollwizard
 ```
+
+### **Environment Setup**
+- Configure AWS SES for email functionality
+- Set up PostgreSQL database (or use Supabase)
+- Configure environment variables on your server
 
 ---
 
@@ -435,31 +440,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🏆 **Awards & Recognition**
-
-- 🥇 **Best Technical Innovation** - WebWizards Hackathon 2024
-- 🏅 **People's Choice Award** - Most User-Friendly Interface
-- 🎯 **Judge's Special Recognition** - Outstanding Security Implementation
-
----
 
 ## 🙏 **Acknowledgments**
 
 - **Supabase** for the incredible backend platform and real-time capabilities
-- **Vercel** for seamless deployment and edge computing
+- **AWS** for reliable cloud infrastructure and services
 - **The open-source community** for amazing tools, libraries, and inspiration
-- **Our beta testers** for invaluable feedback and testing
+- **Next.js team** for the excellent React framework
 
 ---
 
-## 📞 **Contact & Support**
-
-- **Email**: support@pollwizard.dev
-- **Discord**: [Join our community](https://discord.gg/pollwizard)
-- **Documentation**: [docs.pollwizard.dev](https://docs.pollwizard.dev)
-- **Bug Reports**: [GitHub Issues](https://github.com/your-username/pollwizard/issues)
-
----
 
 <div align="center">
 
